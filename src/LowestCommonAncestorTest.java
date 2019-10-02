@@ -18,7 +18,8 @@ public class LowestCommonAncestorTest {
         assertEquals(tree.findLCA(2, 4),2);
         assertEquals(tree.findLCA(6, 7),3);
         assertEquals(tree.findLCA(5, 5),5);
-        
-	
+        assertEquals(tree.findLCA(1, 2),1);
+	    assertEquals(tree.findLCA(1, 1),1);
+	    assertEquals(tree.findLCA(0,0),0);
 	}
 }
