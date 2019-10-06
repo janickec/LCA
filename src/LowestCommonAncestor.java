@@ -24,8 +24,10 @@ public class LowestCommonAncestor
 	int findLCA(int n1, int n2) { 
 		path1.clear(); 
 		path2.clear(); 
-		return findLCAInternal(root, n1, n2); 
-	} 
+		
+			return findLCAInternal(root, n1, n2); 
+		
+	}
 
 	private int findLCAInternal(Node root, int n1, int n2) { 
 
@@ -47,38 +49,38 @@ public class LowestCommonAncestor
 	} 
 	
 	// Finds the path from root node to given root of the tree, Stores the 
-	// path in a vector path[], returns true if path exists otherwise false 
-	private boolean findPath(Node root, int n, List<Integer> path) 
-	{ 
-		// base case 
-		if (root == null) { 
-			return false; 
-		} 
-		
-		// Store this node . The node will be removed if 
-		// not in path from root to n. 
-		path.add(root.data); 
-
-		if (root.data == n) { 
-			return true; 
-		} 
-
-		if (root.left != null && findPath(root.left, n, path)) { 
-			return true; 
-		} 
-
-		if (root.right != null && findPath(root.right, n, path)) { 
-			return true; 
-		} 
-
-		// If not present in subtree rooted with root, remove root from 
-		// path[] and return false 
-		path.remove(path.size()-1); 
-
-		return false; 
-	} 
-
-	// Driver code 
+    // path in a vector path[], returns true if path exists otherwise false 
+    private boolean findPath(Node root, int n, List<Integer> path) 
+    { 
+        // base case 
+        if (root == null) { 
+            return false; 
+        } 
+          
+        // Store this node . The node will be removed if 
+        // not in path from root to n. 
+        path.add(root.data); 
+  
+        if (root.data == n) { 
+            return true; 
+        } 
+  
+        if (root.left != null && findPath(root.left, n, path)) { 
+            return true; 
+        } 
+  
+        if (root.right != null && findPath(root.right, n, path)) { 
+            return true; 
+        } 
+  
+        // If not present in subtree rooted with root, remove root from 
+        // path[] and return false 
+        path.remove(path.size()-1); 
+  
+        return false; 
+    } 
+	
+		// Driver code 
 	public static void main(String[] args) 
 	{ 
 		 
