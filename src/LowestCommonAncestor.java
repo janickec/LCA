@@ -13,6 +13,16 @@ class Node {
 	} 
 } 
 
+class DagNode{
+	int data;
+	DagNode next;
+	DagNode(int value, DagNode next){
+		data= value;
+		next= this.next;
+	}
+	
+}
+
 public class LowestCommonAncestor
 { 
 
