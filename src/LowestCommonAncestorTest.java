@@ -122,7 +122,7 @@ assertEquals(tree.findLCA(0, 1),-1);
 			dag.dagRoot.nextNode.nextNode = new DagNode(3,4);
 			dag.dagRoot.nextNode.nextNode.nextNode = new DagNode(4,5);
 			
-			assertEquals(dag.findLCA(1, 2),1);
+			assertEquals(dag.findLCADag(1, 2),1);
 			
 			
 		}
