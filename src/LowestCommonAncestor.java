@@ -15,17 +15,19 @@ class Node {
 
 class DagNode{
 	int data;
-	DagNode next;
-	DagNode(int value, DagNode next){
+	int next;
+	int nextNext;
+	DagNode nextNode;
+	DagNode(int value, int next){
 		data= value;
-		next= this.next;
+		nextNode= new DagNode(next, nextNext);
 	}
 	
 }
 
 public class LowestCommonAncestor
 { 
-
+    DagNode dagRoot;
 	Node root; 
 	private List<Integer> path1 = new ArrayList<>(); 
 	private List<Integer> path2 = new ArrayList<>(); 
