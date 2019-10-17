@@ -1,4 +1,4 @@
-//solution found on https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
+
 import java.util.ArrayList; 
 import java.util.List; 
 
@@ -13,6 +13,8 @@ class Node {
 	} 
 } 
 
+//We construct Nodes for the DAG, which contain a value, and the next Node, which they are pointing at. The next Node then
+//receives this next value as its own value, and contains the nextNext value, pointing at its own next Node.
 class DagNode{
 	int data;
 	int next;
@@ -20,6 +22,7 @@ class DagNode{
 	DagNode nextNode;
 	DagNode(int value, int next){
 		data= value;
+		next=this.next;
 		nextNode= new DagNode(next, nextNext);
 	}
 	
@@ -32,7 +35,11 @@ public class LowestCommonAncestor
     Node root; 
 	private List<Integer> path1 = new ArrayList<>(); 
 	private List<Integer> path2 = new ArrayList<>(); 
-
+	
+	
+//Here is my initial attempt at finding the LCA of a DAG, which has its roots in the original implementation. I have changed 
+//all the nodes to DAG Nodes, and the left and right Nodes to the next Nodes. Unfortunately this implementation does not work,
+//and I am still trying to figure out how to implement this method for a DAG.
 	int findLCADag(int n1, int n2){
 		path1.clear(); 
 		path2.clear(); 
